@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'assets/variables.scss';
+@import '~bootstrap/scss/bootstrap';
+
+body {
+    background: #f1f4f7;
+}
+
+.card {
+    border: 1px solid #e3e8ef;
+    border-radius: 0.5rem;
+}

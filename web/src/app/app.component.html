@@ -1,0 +1,20 @@
+<div class="header">
+  <div class="container">
+    <h1>Desafio - CRUD de clientes</h1>
+  </div>
+</div>
+<div class="container">
+  <div class="card">
+    <ul class="nav nav-tabs mt-3 ps-3">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/clientes" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">Clientes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/clientes/adicionar-cliente" routerLinkActive="active">Adicionar
+          cliente</a>
+      </li>
+    </ul>
+    <router-outlet></router-outlet>
+  </div>
+</div>

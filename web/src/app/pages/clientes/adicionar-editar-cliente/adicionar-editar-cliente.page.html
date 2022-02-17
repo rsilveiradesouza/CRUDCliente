@@ -1,0 +1,37 @@
+<div class="p-3">
+  <ng-container *ngIf="!loading">
+    <form [formGroup]="form">
+      <div class="row">
+        <div class="col-12">
+          <div class="mb-3">
+            <app-input label="Nome" type="text" formControlName="nome"></app-input>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="mb-3">
+            <app-input label="CPF" type="cpf" formControlName="cpf"></app-input>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="mb-3">
+            <app-input label="Telefone" type="cel" formControlName="celular"></app-input>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="mb-3">
+            <app-input label="E-mail" type="text" formControlName="email"></app-input>
+          </div>
+        </div>
+        <div class="col-12">
+          <button type="button" class="btn btn-primary" (click)="ehEdicao ? editarCliente() : adicionarCliente()"
+            [disabled]="loadingButton">{{loadingButton ? 'Carregando...' : ehEdicao ? 'Editar' : 'Adicionar'}}</button>
+        </div>
+      </div>
+    </form>
+  </ng-container>
+  <ng-container *ngIf="loading">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Carregando...</span>
+    </div>
+  </ng-container>
+</div>
