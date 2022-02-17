@@ -1,5 +1,5 @@
-import { AfterViewInit, Component, ElementRef, Input, OnInit, Optional, Self, ViewChild } from '@angular/core';
-import { AbstractControl, NgControl } from '@angular/forms';
+import { AfterViewInit, Component, Input, OnInit, Optional, Self } from '@angular/core';
+import { AbstractControl, ControlValueAccessor, NgControl } from '@angular/forms';
 
 @Component({
     selector: 'app-input',
@@ -7,7 +7,7 @@ import { AbstractControl, NgControl } from '@angular/forms';
     styleUrls: ['input.component.scss']
 })
 
-export class InputComponent implements OnInit, AfterViewInit {
+export class InputComponent implements OnInit, AfterViewInit, ControlValueAccessor {
 
     public value: string | null | string = '';
     public disabled = false;
@@ -17,12 +17,8 @@ export class InputComponent implements OnInit, AfterViewInit {
     @Input() label: string | undefined;
     @Input() type: string | undefined;
     @Input() placeholder = '';
-    @Input() hasAstrisk = true;
 
-    @ViewChild('input') input: ElementRef<HTMLDivElement> | undefined;
-
-    constructor(
-        @Optional() @Self() public controlDir: NgControl) {
+    constructor(@Optional() @Self() public controlDir: NgControl) {
         this.controlDir.valueAccessor = this;
     }
 
@@ -54,15 +50,12 @@ export class InputComponent implements OnInit, AfterViewInit {
         this.onTouched();
     }
 
-    onFocus(): void {
+    modelChange(event: string): void {
+        this.onChangeFn(event);
     }
 
     setDisabledState(disabled: boolean): void {
         this.disabled = disabled;
-    }
-
-    onChange(value: string): void {
-        this.onChangeFn(value);
     }
 
     get hasError(): boolean {
@@ -88,10 +81,6 @@ export class InputComponent implements OnInit, AfterViewInit {
 
     get hasMask(): boolean {
         return this.getMask !== null;
-    }
-
-    modelChange(event: string): void {
-        this.onChange(event);
     }
 
     get getMask(): string {

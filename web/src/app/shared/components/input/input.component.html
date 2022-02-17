@@ -1,9 +1,9 @@
 <div class="form-group">
     <div class="label-formgroup" *ngIf="label">{{label}}<span *ngIf="isRequired">*</span></div>
     <div class="input-group">
-        <input class="form-control" #input [type]="getType" [placeholder]="placeholder" [(ngModel)]="value"
+        <input class="form-control" [type]="getType" [placeholder]="placeholder" [(ngModel)]="value"
             [mask]="getMask" (ngModelChange)="modelChange($event)" (blur)="onBlur()" [class.has-error]="hasError"
-            [disabled]="disabled" (focus)="onFocus()" />
+            [disabled]="disabled" />
     </div>
     <div class="error-message">
         <div class="message" *ngIf="hasError">{{ errorMessage }}</div>

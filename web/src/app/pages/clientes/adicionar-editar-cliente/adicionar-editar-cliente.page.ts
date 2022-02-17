@@ -21,6 +21,7 @@ export class AdicionarEditarClientePage implements OnInit {
     celular: new FormControl('', [CustomValidator.cel]),
     email: new FormControl('', [CustomValidator.email])
   });
+  
   public id: string | undefined;
   public ehEdicao = false;
   public cliente: Cliente | undefined;

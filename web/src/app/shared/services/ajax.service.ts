@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { lastValueFrom } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
     providedIn: 'root'
 })
 export class AjaxService {
-    public readonly baseUrl = "https://localhost:7193";
+    public readonly baseUrl = environment.baseUrlApi;
 
     constructor(private http: HttpClient) { }
 
