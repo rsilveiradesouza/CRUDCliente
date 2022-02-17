@@ -6,7 +6,7 @@ import { AjaxService } from './ajax.service';
 export class ClienteService {
     constructor(private ajaxService: AjaxService) { }
 
-     obterClientes(): Promise<Cliente[]> {
+    obterClientes(): Promise<Cliente[]> {
         return this.ajaxService.get<Cliente[]>("clientes");
     }
 
