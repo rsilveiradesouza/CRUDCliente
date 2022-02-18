@@ -10,6 +10,6 @@ docker-compose build
 docker-compose up
 ```
 4. Urls geradas pela aplicação:
-    Web: `http://localhost:8000`
-    Server: `http://localhost:7193/swagger`
-    Database: `Data Source=localhost,8001; database=crudcliente; User ID=sa; Password=asddsa@Rwq2123`
+    * Web: `http://localhost:8000`
+    * Server: `http://localhost:7193/swagger`
+    * Database: `Data Source=localhost,8001; database=crudcliente; User ID=sa; Password=asddsa@Rwq2123`
