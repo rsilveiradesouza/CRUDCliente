@@ -1,11 +1,11 @@
 # Setup para execução <!-- omit in toc -->
 
 1. Execute o Docker Desktop
-2. Execute o build do docker-compose:
+2. Execute a primeira vez o build do docker-compose:
 ```
 docker-compose build
 ```
-3. Execute o up do docker-compose:
+3. Execute o up do docker-compose sempre que quiser levantar a aplicação:
 ```
 docker-compose up
 ```
