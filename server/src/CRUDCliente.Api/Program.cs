@@ -84,4 +84,7 @@ app.UseSwagger().UseSwaggerUI(options =>
 });
 app.UseEndpoints(endpoints => endpoints.MapControllers());
 
+var context = app.Services.GetRequiredService<ApplicationDbContext>();
+context.Database.Migrate();
+
 app.Run();

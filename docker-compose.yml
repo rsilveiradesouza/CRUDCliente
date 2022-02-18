@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+  database:
+    container_name: database
+    image: "mcr.microsoft.com/mssql/server"
+    restart: unless-stopped
+    environment:
+      SA_PASSWORD: "asddsa@Rwq2123"
+      ACCEPT_EULA: "Y"
+    ports:
+      - 8001:1433
+  api:
+    container_name: api
+    restart: unless-stopped
+    build:
+      context: server
+    ports:
+      - 7193:7193
+    environment:
+      - ASPNETCORE_ENVIRONMENT=docker
+      - ASPNETCORE_URLS=http://+:7193
+    depends_on:
+      - database
+    entrypoint: ["./wait-for-it.sh", "database:1433", "--", "dotnet", "CRUDCliente.Api.dll"]
+  web:
+    container_name: web
+    restart: unless-stopped
+    build:
+      context: web
+    ports:
+      - '8000:80'
+    depends_on:
+      - api
