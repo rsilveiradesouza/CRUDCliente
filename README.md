@@ -2,13 +2,13 @@
 
 ## Índice
 - [Desafio CRUD de Cliente](#desafio-crud-de-cliente)
-  - [Setup inicial](#setup-inicial)
+  - [Setup para execução](#Setup-para-execução)
 - [Style Guide para desenvolvimento do back-end](#style-guide-para-desenvolvimento-do-back-end)
   - [Introdução](#introdução)
   - [Estrutura](#estrutura)
 
-## Setup inicial
-Para entender como preparar o ambiente para o seu desenvolvimento, veja as instruções [descritas aqui](Setup.md).
+## Setup para execução
+Para executar o projeto, veja as instruções [descritas aqui](Setup.md).
 
 # Style Guide para desenvolvimento do Back-end
 
